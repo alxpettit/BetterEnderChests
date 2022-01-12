@@ -20,10 +20,7 @@ public abstract class BlockStateBaseMixin {
 
     @Inject(method = "getDestroySpeed", at = @At("TAIL"), cancellable = true)
     public void getDestroySpeedMixin(BlockGetter blockGetter, BlockPos blockpos, CallbackInfoReturnable<Float> cir) {
-        ModMain.LOGGER.info("Found: " + getBlock().getRegistryName());
         if (getBlock() instanceof EnderChestBlock) {
-            ModMain.LOGGER.info("IS an ender chest.");
-            ModMain.LOGGER.info("Overriding destroy speed getter.");
             cir.setReturnValue(-1.0F);
         }
     }
