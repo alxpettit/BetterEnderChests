@@ -43,31 +43,12 @@ public class ModMain {
         // or using static methods to listen to events,
         // feel free to check out the Forge wiki!
 
-
         registerCommonEvents(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
        // LOGGER.info("Hello from common setup! This is *after* registries are done, so we can do this:");
        // LOGGER.info("Look, I found a {}!", Items.DIAMOND.getRegistryName());
-//
-//        try {
-////            BlockBehaviour.Properties newEnderChestProperties = BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(-1, 600.0F).lightLevel((arg) -> {
-////                return 7;
-////            });
-////            blockProperties = BlockBehaviour.class.getDeclaredField("properties");
-////            blockProperties.setAccessible(true);
-////            blockProperties.set(BlockBehaviour.Properties.class, newEnderChestProperties);
-//            blockProperties = BlockBehaviour.Properties.class.getDeclaredField("destroyTime");
-//            blockProperties.setAccessible(true);
-//            blockProperties.setInt(ENDER_CHEST.properties, -1);
-//
-//        } catch (Exception e) {
-//            ModMain.LOGGER.error("Failure while attempting to set harvest level?");
-//            e.printStackTrace();
-//        }
-       // Registry.BLOCK, (String)string, arg);
-
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
