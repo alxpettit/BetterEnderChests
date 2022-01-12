@@ -8,5 +8,5 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class StartupCommon {
-    
+
 }
