@@ -7,7 +7,7 @@
     "ExampleMixin"
   ],
   "mixins": [
-    "BlockBehavior"
+    "BlockBehaviorMixin"
   ],
   "injectors": {
     "defaultRequire": 1

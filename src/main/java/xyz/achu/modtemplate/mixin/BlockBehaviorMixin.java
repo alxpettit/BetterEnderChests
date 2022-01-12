@@ -1,6 +1,8 @@
 package xyz.achu.modtemplate.mixin;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -17,18 +19,23 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 
 @Mixin(BlockBehaviour.class)
-public abstract class BlockBehavior {
+public abstract class BlockBehaviorMixin {
+    SoundSource source = SoundSource.NEUTRAL;
     @Shadow protected abstract Block asBlock();
 
     @Shadow public abstract Item asItem();
 
     @Inject(method = "attack", at = @At("HEAD"))
     public void attack(BlockState blockState, Level level, BlockPos blockPos, Player player, CallbackInfo ci) {
-        if (this.asBlock() instanceof EnderChestBlock) {
+        Block block = this.asBlock();
+        if (block instanceof EnderChestBlock) {
             ItemStack itemStack = new ItemStack(asItem());
             boolean addedChestToInventory = player.getInventory().add(itemStack);
             if (addedChestToInventory) {
                 level.removeBlock(blockPos, true);
+                level.playSound((Player)null, blockPos, SoundEvents.ITEM_FRAME_ADD_ITEM, source, 1.0F, 1.0F);
+            } else {
+                level.playSound((Player)null, blockPos,  SoundEvents.PLAYER_ATTACK_NODAMAGE, source, 1.0F, 1.0F);
             }
         }
     }
