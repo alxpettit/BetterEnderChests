@@ -10,11 +10,11 @@ license = "GNU GPLv3"
 # A list of mods - how many allowed here is determined by the individual mod loader
 
 [[mods]]
-modId = "modtemplate"
+modId = "betterenderchest"
 # The version number of the mod - unlike in the Forge MDK,
 # we'll use the processResources task to replace this for us
 version = "${version}"
-displayName = "ModTemplate"
+displayName = "BetterEnderChest"
 # This URL will be queried by the Forge update checker in order to find the latest version of your mod.
 # If an update is found, you'll see a little blinking "emerald" symbol on your Mods button!
 # updateJSONURL="https://changeme.dev/updates.json" #optional
@@ -28,13 +28,14 @@ displayName = "ModTemplate"
 # authors="Me!" #optional
 # A multi-line description for your mod. This has no minimum length, but it *is* required!
 description = '''
-[MOD DESCRIPTION GOES HERE]
+Simply click once on an ender chest and it will instantly pop into your inventory. If you don't have enough space,
+nothing will happen! Giving you that Create Mod toolbox experience. :3
 '''
 
 # An (optional) dependency for your mod. Though technically not required,
 # it's always helpful to add these to stop your mod from loading when something is missing
 # rather than erroring out later
-[[dependencies.modtemplate]]
+[[dependencies.betterenderchest]]
 modId = "forge"
 mandatory = true # do you **need** this mod to be able to launch?
 # A version range using interval notation.
@@ -44,7 +45,7 @@ ordering = "NONE" # Use this if you want your mod to be loaded specifically BEFO
 side = "BOTH" # Specify where this mod is required: can be BOTH, CLIENT or SERVER
 
 # And another dependency, use this if you want to require a certain Minecraft version.
-[[dependencies.modtemplate]]
+[[dependencies.betterenderchest]]
 modId = "minecraft"
 mandatory = true
 # See above for how to read this notation, this essentially means any

@@ -1,4 +1,4 @@
-package xyz.achu.modtemplate.mixin;
+package xyz.achu.betterenderchest.mixin;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;

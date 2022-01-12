@@ -1,4 +1,4 @@
-package xyz.achu.modtemplate;
+package xyz.achu.betterenderchest;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.ExplosionEvent;
@@ -11,7 +11,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod("modtemplate")
+@Mod("betterenderchest")
 public class ModMain {
 
     public static final Logger LOGGER = LogManager.getLogger();
